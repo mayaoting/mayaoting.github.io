@@ -8,44 +8,48 @@
     
     <meta name="description" content="">
     
-    <link rel="preload" href="/front-end-article/assets/css/0.styles.30a18405.css" as="style"><link rel="preload" href="/front-end-article/assets/js/app.f1a062d5.js" as="script"><link rel="preload" href="/front-end-article/assets/js/2.dea1b519.js" as="script"><link rel="preload" href="/front-end-article/assets/js/9.9120c15d.js" as="script"><link rel="prefetch" href="/front-end-article/assets/js/10.e7756153.js"><link rel="prefetch" href="/front-end-article/assets/js/3.e5f48a0a.js"><link rel="prefetch" href="/front-end-article/assets/js/4.c1ae2fe6.js"><link rel="prefetch" href="/front-end-article/assets/js/5.a5a9a5a3.js"><link rel="prefetch" href="/front-end-article/assets/js/6.c8b7a84a.js"><link rel="prefetch" href="/front-end-article/assets/js/7.9dc96a29.js"><link rel="prefetch" href="/front-end-article/assets/js/8.d3452962.js">
+    <link rel="preload" href="/front-end-article/assets/css/0.styles.30a18405.css" as="style"><link rel="preload" href="/front-end-article/assets/js/app.75b8660a.js" as="script"><link rel="preload" href="/front-end-article/assets/js/2.7186db24.js" as="script"><link rel="preload" href="/front-end-article/assets/js/10.dedb0239.js" as="script"><link rel="prefetch" href="/front-end-article/assets/js/11.3b2cc19c.js"><link rel="prefetch" href="/front-end-article/assets/js/3.c4bce856.js"><link rel="prefetch" href="/front-end-article/assets/js/4.59fd897c.js"><link rel="prefetch" href="/front-end-article/assets/js/5.0a3cdd9d.js"><link rel="prefetch" href="/front-end-article/assets/js/6.c54b0df5.js"><link rel="prefetch" href="/front-end-article/assets/js/7.691b632f.js"><link rel="prefetch" href="/front-end-article/assets/js/8.23d06289.js"><link rel="prefetch" href="/front-end-article/assets/js/9.7fd63ae3.js">
     <link rel="stylesheet" href="/front-end-article/assets/css/0.styles.30a18405.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/front-end-article/" class="home-link router-link-active"><!----> <span class="site-name">front-end-articles</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/front-end-article/" aria-current="page" class="sidebar-link">简介</a></li><li><a href="/front-end-article/01.html" class="sidebar-link">1.introduce</a></li><li><a href="/front-end-article/02.html" class="sidebar-link">2.union standard</a></li><li><a href="/front-end-article/03.html" aria-current="page" class="active sidebar-link">3.webpack 学习点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/front-end-article/03.html#webpack-loader" class="sidebar-link">webpack loader</a></li><li class="sidebar-sub-header"><a href="/front-end-article/03.html#webpack-plugin" class="sidebar-link">webpack plugin</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="webpack-loader"><a href="#webpack-loader" class="header-anchor">#</a> webpack loader</h2> <p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或 '加载'模块时预处理文件。因此,loader 类似于其他构建工具中 “任务(task)”,并提供了处理前端构建步骤的强大方法。 loader 可以将文件从不同的语言（如 Typescript）转换为 javaScript ，或将内联图像转换为 data URL</p> <ul><li>loader 支持链式传递，且执行顺序是自下而上的执行，loader 链中的第一个 loader 返回值给下一个 loader,在最后一个 loader， 返回 webpack 所预期的 JavaScript</li> <li>loader 可以是同步的也可以是异步的</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// webpack.config.js
-module: {
-    rules: [{
-      test: /\.js$/, // 表示对js文件使用下面的两个loader
-      // 当链式调用多个loader的时候 他们会以相反的顺序执行 自下而上  即先用loader处理源码，然后在处理后代码再传给 loader2
-      use: [{
-          loader: path.resolve('./src/loader2.js'),
-        },
-        {
-          loader: path.resolve('./src/loader1.js'),
-        }
-      ]
-    }]
-  },
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/front-end-article/" class="home-link router-link-active"><!----> <span class="site-name">front-end-articles</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/front-end-article/" aria-current="page" class="sidebar-link">简介</a></li><li><a href="/front-end-article/01.html" class="sidebar-link">1.introduce</a></li><li><a href="/front-end-article/02.html" class="sidebar-link">2.union standard</a></li><li><a href="/front-end-article/03.html" aria-current="page" class="active sidebar-link">3.webpack 学习点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/front-end-article/03.html#webpack-loader" class="sidebar-link">webpack loader</a></li><li class="sidebar-sub-header"><a href="/front-end-article/03.html#webpack-plugin" class="sidebar-link">webpack plugin</a></li></ul></li><li><a href="/front-end-article/04.html" class="sidebar-link">4.vue项目中全局引入自定义模板</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="webpack-loader"><a href="#webpack-loader" class="header-anchor">#</a> webpack loader</h2> <p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或 '加载'模块时预处理文件。因此,loader 类似于其他构建工具中 “任务(task)”,并提供了处理前端构建步骤的强大方法。 loader 可以将文件从不同的语言（如 Typescript）转换为 javaScript ，或将内联图像转换为 data URL</p> <ul><li>loader 支持链式传递，且执行顺序是自下而上的执行，loader 链中的第一个 loader 返回值给下一个 loader,在最后一个 loader， 返回 webpack 所预期的 JavaScript</li> <li>loader 可以是同步的也可以是异步的</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// webpack.config.js</span>
+module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.js$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token comment">// 表示对js文件使用下面的两个loader</span>
+      <span class="token comment">// 当链式调用多个loader的时候 他们会以相反的顺序执行 自下而上  即先用loader处理源码，然后在处理后代码再传给 loader2</span>
+      use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./src/loader2.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'./src/loader1.js'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
 </code></pre></div><h2 id="webpack-plugin"><a href="#webpack-plugin" class="header-anchor">#</a> webpack plugin</h2> <p>webpack 插件是一个具有 apply 方法的 javaScript 对象 apply 方法
 会被 webpack compiler 调用并且在整个编译生命周期都可以访问
-compiler 对象</p> <ul><li>一个 javaScript 命名函数</li> <li>在插件函数的 prototype 上定义一个 apply 方法</li> <li>指定一个绑定到 webapck 自身的事件钩子</li> <li>处理 webpack 内部实例的特定数据</li> <li>功能完成后调用 webpack 提供的回调</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 一个javaScript命名的函数
-function Plugin(option) {}
+compiler 对象</p> <ul><li>一个 javaScript 命名函数</li> <li>在插件函数的 prototype 上定义一个 apply 方法</li> <li>指定一个绑定到 webapck 自身的事件钩子</li> <li>处理 webpack 内部实例的特定数据</li> <li>功能完成后调用 webpack 提供的回调</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 一个javaScript命名的函数</span>
+<span class="token keyword">function</span> <span class="token function">Plugin</span><span class="token punctuation">(</span><span class="token parameter">option</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
-// 在插件函数的prototype上定一个apply方法
-Plugin.prototype.apply = function(compiler) {
-// 指定一个挂载到webpack自身的事件钩子
-compiler.plugin('webpacksEventHook',funtion(compilation) {
-  // 处理webpack内部实例的特定数据
-  console.log(&quot;this is an example plugin!!!)
-  //功能完成后调用webpack 提供的回调
-  callback()
-})
-}
+<span class="token comment">// 在插件函数的prototype上定一个apply方法</span>
+<span class="token class-name">Plugin</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">apply</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">compiler</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">// 指定一个挂载到webpack自身的事件钩子</span>
+compiler<span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span><span class="token string">'webpacksEventHook'</span><span class="token punctuation">,</span><span class="token function">funtion</span><span class="token punctuation">(</span><span class="token parameter">compilation</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 处理webpack内部实例的特定数据</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>&quot;<span class="token keyword">this</span> is an example plugin<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">)</span>
+  <span class="token comment">//功能完成后调用webpack 提供的回调</span>
+  <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/front-end-article/02.html" class="prev">
         2.union standard
-      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/front-end-article/assets/js/app.f1a062d5.js" defer></script><script src="/front-end-article/assets/js/2.dea1b519.js" defer></script><script src="/front-end-article/assets/js/9.9120c15d.js" defer></script>
+      </a></span> <span class="next"><a href="/front-end-article/04.html">
+        4.vue项目中全局引入自定义模板
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/front-end-article/assets/js/app.75b8660a.js" defer></script><script src="/front-end-article/assets/js/2.7186db24.js" defer></script><script src="/front-end-article/assets/js/10.dedb0239.js" defer></script>
   </body>
 </html>
